@@ -1,0 +1,81 @@
+html, body {
+  font-size: 10px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background: #F3F3F4;
+}
+
+div {
+  clear: both;
+}
+
+header{
+  background-color: #0003cf;
+  /*color: #FFFFFF;*/
+  /*position: relative;*/
+  z-index: 2;
+  display: block;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li{
+    /*Bordes redondeados*/
+    -webkit-border-radius:5px;/*Chrome y Safari*/
+    -moz-border-radius:5px;/*Firefox*/
+    -o-border-radius:5px;/*Opera*/
+    border-radius:5px;/*Estandar por defecto*/
+    float:left;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size:16px;
+    font-weight:bold;
+    margin-right:10px;
+    text-align:center;
+    /*Sombras para texto, los mismos parametros que box-shadow*/
+    text-shadow: 0px 1px 0px #FFF;
+}
+
+/*header h1 {
+  background: url("images/mainsepa.png") no-repeat scroll left top;
+  text-shadow: 0 -1px black;
+  font-weight: normal;
+  font-size: 2.2rem;
+  line-height: 4.9rem;
+  height: 100%;
+  margin: 0 0 0 2rem;
+  padding: 0 0 0 1rem;
+  overflow: hidden;
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}*/
+
+/*.buttonMenu {
+ background: #00539f url("images/menu.png") no-repeat -0.5rem center;
+  position: absolute;
+  width: 4rem;
+  border: none;
+  height: 100%;
+  margin: 0;
+}
+
+ #buttonSearch{
+   background: #00539f url("images/tpb-search.png") no-repeat -0.5rem center;
+  border: none;
+  margin: 0;
+}
+
+.buttonBack {
+  background: #00539f url("images/back.png") no-repeat -0.5rem center;
+  position: absolute;
+  left: 0;
+  width: 2rem;
+  border: none;
+  height: 100%;
+  margin: 0;
+}*/
+
