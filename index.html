@@ -3,6 +3,8 @@
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width">
+   <link rel="stylesheet" type="text/css" href="shared/style/headers.css">
+   <link rel="stylesheet" type="text/css" href="shared/style/input_areas.css">
    <link rel="stylesheet" type="text/css" href="style/wappa.css"/>
    <title>Wappa</title>
 </head>
@@ -16,20 +18,27 @@
      </ul>
      <h1>App Title</h1> -->
    </header>
-   <section role="region" id="torrentSerach">
+   <section role="region" id="torrentSearch">
     <header>
-      <nav>
-        <ul>
-          <li><h1>Wappa!!!</h1></li>
-          <li><button type="reset" class="buttonMenu"></button></li>
-        </ul>
-      </nav>
-    </header> 
+      <menu type="toolbar">
+        <a href="#"><span class="icon icon-menu">Menu</span></a>
+      </menu>
+     <h1>Wappa!!</h1>
+    </header>
 
-      <div id="divSearch">
+    <form role="search" class="bottom">
+      <button type="submit">Send</button>
+      <p>
+        <input type="text" required="">
+        <button type="reset">Clear</button>
+      </p>
+    </form>
+
+
+      <!-- div id="divSearch">
         <input id="inputSearch" type="search" autofocus placeholder="search"/>
         <button id="buttonSearch" alt="Search it!!"></button>
-      </div>
+      </div> -->
 
       <div id="tempResults">
       </div>
@@ -39,7 +48,8 @@
    </setion>
    <section role="region" id="sectionList">
       <nav>
-        <ul id="ulList">
+        <ul id="ulList" class="compact">
+
         </ul>
       </nav>
    </section>
