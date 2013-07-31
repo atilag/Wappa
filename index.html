@@ -3,30 +3,51 @@
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width">
-   <link rel="stylesheet" type="text/css" href="shared/style/headers.css">
-   <link rel="stylesheet" type="text/css" href="shared/style/input_areas.css">
-   <link rel="stylesheet" type="text/css" href="style/wappa.css"/>
+  <link rel="stylesheet" href="uxbb/style/action_menu.css">
+  <link rel="stylesheet" href="uxbb/style/buttons.css">
+  <link rel="stylesheet" href="uxbb/style/confirm.css">
+  <link rel="stylesheet" href="uxbb/style/edit_mode.css">
+  <link rel="stylesheet" href="uxbb/style/headers.css">
+  <link rel="stylesheet" href="uxbb/style/input_areas.css">
+  <link rel="stylesheet" href="uxbb/style/status.css">
+  <link rel="stylesheet" href="uxbb/style/switches.css">
+  <link rel="stylesheet" href="uxbb/style_unstable/drawer.css">
+  <link rel="stylesheet" href="uxbb/style_unstable/lists.css">
+  <link rel="stylesheet" href="uxbb/style_unstable/progress_activity.css">
+  <link rel="stylesheet" href="uxbb/style_unstable/scrolling.css">
+  <link rel="stylesheet" href="uxbb/style_unstable/seekbars.css">
+  <link rel="stylesheet" href="uxbb/style_unstable/tabs.css">
+  <link rel="stylesheet" href="uxbb/style_unstable/toolbars.css">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="uxbb/icons/styles/action_icons.css">
+  <link rel="stylesheet" href="uxbb/icons/styles/media_icons.css">
+  <link rel="stylesheet" href="uxbb/icons/styles/comms_icons.css">
+  <link rel="stylesheet" href="uxbb/icons/styles/settings_icons.css">
+
+  <!-- Transitions -->
+  <link rel="stylesheet" href="uxbb/transitions.css">
+  
+  <!-- Util CSS: some extra tricks -->
+  <link rel="stylesheet" href="uxbb/util.css">
+  <link rel="stylesheet" href="uxbb/fonts.css">
+
+  <!-- Additional markup to make Building Blocks kind of cross browser -->
+  <link rel="stylesheet" href="uxbb/cross_browser.css">
+
+  <!-- Wappa specific styles -->
+  <link rel="stylesheet" type="text/css" href="style/wappa.css"/>
    <title>Wappa</title>
 </head>
 <body role="application">
-
-   <header>
-     <!-- <button id="btnMain"></button>
-     <ul id="install-add">
-        <li><button id="btnInstall">Install</button></li>
-        <li><button id="btnAdd"></button></li>
-     </ul>
-     <h1>App Title</h1> -->
-   </header>
-   <section role="region" id="torrentSearch">
+  <section role="region" id="torrentSearch">
     <header>
       <menu type="toolbar">
-        <a href="#"><span class="icon icon-menu">Menu</span></a>
+       <span class="icon icon-menu">Menu</span>
       </menu>
      <h1>Wappa!!</h1>
     </header>
-
-    <form role="search" class="bottom">
+   <form role="search" class="bottom">
       <button id="buttonSearch" type="submit">Send</button>
       <p>
         <input id="inputSearch" type="text" required="">
