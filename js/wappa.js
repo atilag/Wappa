@@ -2,25 +2,24 @@
    http://wappa.sekta.es
    Copyright (c) 2013 Juan Gomez Mosquera - Licensed MIT */
 
-window.addEventListener('load', function onload() {
-  window.removeEventListener('load', onload);
-  Wappa.init();
-});
-
 var Wappa = (function($$, undefined) {
 
-	var init = function() {
+	function _init() {
+		console.log("Wappa::init()!");
 		$$('#buttonSearch').on( 'click',  function() {
+			console.log("Wappa::click()!");
 			Wappa.Tpb.search({
 				data: $$('#inputSearch').val(),
-				success: showList,
-				error: function(){ alert("Have errors!"); },
+				success: _showList,
+				error: function(){ 
+					console.error("Have errors!"); 
+				},
 				dataType: 'html'
 			});
 		});
 	};
 
-	var showList = function(list) {
+	function _showList(list) {
 		var panel = document.getElementById('sectionList');
 		if( panel.children.length == 0 ) {
 			for (var i = 0; i < panel.childNodes.length; i++) {
@@ -38,8 +37,13 @@ var Wappa = (function($$, undefined) {
 	};
 
 	return{
-		init: init
+		init: _init
 	};
 
 })($$ || Quo );
 
+
+window.addEventListener('load', function onload() {
+  window.removeEventListener('load', onload);
+  Wappa.init();
+});

@@ -1,10 +1,10 @@
 Wappa.utils = (function(){
 	
-	var _isNumeric = function(obj){
+	function _isNumeric(obj){
 		return !isNaN( parseFloat(obj) ) && isFinite( obj );
 	};
 
-	var _createTorrentElement = function(obj) {
+	function _createTorrentElement(obj) {
 		if( obj == undefined || obj.title == undefined || obj.magnet == undefined )
 			return;
 

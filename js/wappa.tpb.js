@@ -5,10 +5,11 @@ Wappa.Tpb = (function( wappa, $$, undefined){
 	*
 	*
 	*/
-	var _search = function(options) {
+	function _search(options) {
 		if( options === undefined || options.data === undefined || options.success === undefined )
 			return;
 
+		console.log("Wappa.Tpb.search(): options.data = " + options.data );
 		_options = options;
 		$$.ajaxSettings.timeout = 10000;
 
@@ -21,13 +22,13 @@ Wappa.Tpb = (function( wappa, $$, undefined){
 			dataType: 'html',
 			async: true,
 			success: _onSuccess,
-			error: options.error
+			error: _options.error
 		});
 	};
 
 
-	var _onSuccess = function(context, response) {
-		console.log( "Text: '" + response.responseText + "' Length: " + response.responseText.Length );
+	function _onSuccess(context, response) {
+		console.log( "Text: '" + response.responseText + "' Length: " + response.responseText.length );
 		$$('#tempResults').append( response.responseText ).hide();
 		var list = [];
 		var listIdx = 0;
@@ -53,12 +54,12 @@ Wappa.Tpb = (function( wappa, $$, undefined){
 	};
 
 
-	var _getTorrentTitle = function(element) {
+	function _getTorrentTitle(element) {
 		if( $$(element).hasClass('detLink') )
 			return $$(element).text();
 	};
 
-	var _getTorrentMagnet = function(element) {
+	function _getTorrentMagnet(element) {
 		var href = $$(element).attr('href');
 		if( href.indexOf('magnet:') != -1 ) 
 			return href;
