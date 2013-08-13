@@ -627,11 +627,13 @@ window.Quo = Quo;
     }
     xhr = settings.xhr();
     xhr.onreadystatechange = function() {
+      console.log("onreadystatechange()::readyState = " + xhr.readyState);      
       if (xhr.readyState === 4) {
         clearTimeout(abortTimeout);
         return _xhrStatus(xhr, settings);
       }
     };
+    console.log("ajax()::open()");
     xhr.open(settings.type, settings.url, settings.async);
     _xhrHeaders(xhr, settings);
     if (settings.timeout > 0) {
@@ -640,6 +642,7 @@ window.Quo = Quo;
       }), settings.timeout);
     }
     try {
+      console.log("ajax()::send()");
       xhr.send(settings.data);
     } catch (error) {
       xhr = error;
@@ -729,15 +732,20 @@ window.Quo = Quo;
     }
   };
   _xhrStatus = function(xhr, settings) {
+    console.log("_xhrStatus()::status = " + xhr.status);
     if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 0) {
       if (settings.async) {
         _xhrSuccess(_parseResponse(xhr, settings), xhr, settings);
       }
     } else {
+      console.log("_xhrStatus()::Error");
       _xhrError("QuoJS.ajax: Unsuccesful request", xhr, settings);
     }
   };
   _xhrSuccess = function(response, xhr, settings) {
+    console.log("_xhrSuccess()::response = " + typeof response + " : " + response);
+    console.log("_xhrSuccess()::xhr = " + typeof xhr);
+    console.log("_xhrSuccess()::settings.success = " + typeof settings.success);
     settings.success.call(settings.context, response, xhr);
   };
   _xhrError = function(type, xhr, settings) {

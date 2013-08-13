@@ -14,22 +14,26 @@ Wappa.Tpb = (function( wappa, $$, undefined){
 		$$.ajaxSettings.timeout = 10000;
 
 		
-		$$.ajax({
+		/*$$.ajax({
 			type: 'GET',
-			url: 'http://thepiratebay.se/search/' + encodeURIComponent(options.data) + '/0/99/0',
+			url: 'http://thepiratebay.sx/search/' + encodeURIComponent(options.data) + '/0/99/0',
 			//data: { q: options.data, page: '0', orderby: '99' },
 			//data: { '': options.data, '':'/0/99/0'},
 			dataType: 'html',
 			async: true,
-			success: _onSuccess,
+			success: wappa.Tpb.onSuccess,
 			error: _options.error
-		});
+		});*/
+
+		//DEVELOPMENT ONLY (until I make XHR works on the emulator)
+		var _devel_response = $$("#develResults");
+		_onSuccess(_devel_response);
+
 	};
 
 
-	function _onSuccess(context, response) {
-		console.log( "Text: '" + response.responseText + "' Length: " + response.responseText.length );
-		$$('#tempResults').append( response.responseText ).hide();
+	function _onSuccess(response, xhr) {
+		$$('#tempResults').append( response ).hide();
 		var list = [];
 		var listIdx = 0;
 		$$('#searchResult', 'tr').each( function(index, element){

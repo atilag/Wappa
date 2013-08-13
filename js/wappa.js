@@ -43,7 +43,6 @@ var Wappa = (function($$, undefined) {
 })($$ || Quo );
 
 
-window.addEventListener('load', function onload() {
-  window.removeEventListener('load', onload);
+window.onload = function() {
   Wappa.init();
-});
+};
