@@ -6,7 +6,8 @@ var Wappa = (function($$, undefined) {
 
 	function _init() {
 		console.log("Wappa::init()!");
-		$$('#buttonSearch').on( 'click',  function() {
+		$$('#buttonSearch').on( 'click',  function(e) {
+			e.preventDefault();
 			console.log("Wappa::click()!");
 			Wappa.Tpb.search({
 				data: $$('#inputSearch').val(),
@@ -42,7 +43,6 @@ var Wappa = (function($$, undefined) {
 
 })($$ || Quo );
 
-
-window.onload = function() {
-  Wappa.init();
-};
+document.addEventListener("DOMContentLoaded", function(e) {
+	Wappa.init();
+}, false);
