@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="uxbb/style/input_areas.css">
   <link rel="stylesheet" href="uxbb/style/status.css">
   <link rel="stylesheet" href="uxbb/style/switches.css">
-  <link rel="stylesheet" href="uxbb/style_unstable/drawer.css">
+  <!-- link rel="stylesheet" href="uxbb/style_unstable/drawer.css" -->
   <link rel="stylesheet" href="uxbb/style_unstable/lists.css">
   <link rel="stylesheet" href="uxbb/style_unstable/progress_activity.css">
   <link rel="stylesheet" href="uxbb/style_unstable/scrolling.css">
@@ -40,42 +40,65 @@
    <title>Wappa</title>
 </head>
 <body role="application">
+  <section role="region" id="configMain">
+       <header>
+        <button>
+          <span class="icon icon-back">Back</span>
+        </button>
+        <h1>Wappa!! <em>Config</em></h1>
+       </header>
+       <nav>
+
+       </nav>
+       <footer>
+        <span>#configMain Footer</span>
+       </footer>
+  </section>
+
   <section role="region" id="torrentSearch">
     <header>
       <menu type="toolbar">
        <span class="icon icon-menu">Menu</span>
       </menu>
-     <h1>Wappa!!</h1>
+      <h1>Wappa!! <em>Search</em></h1>
     </header>
-   <form role="search" class="bottom">
-      <button id="buttonSearch" type="submit">Send</button>
-      <p>        
-        <input id="inputSearch" type="text" required="" value="kk">
+    <form role="search" class="bottom">
+      <p>
+        <input id="inputSearch" type="text" required="" value="AtilA">
         <button type="reset">Clear</button>
       </p>
+      <button id="buttonSearch">Send</button>
     </form>
+    <footer>
+    </footer>
+  </section>
 
-
-      <!-- div id="divSearch">
-        <input id="inputSearch" type="search" autofocus placeholder="search"/>
-        <button id="buttonSearch" alt="Search it!!"></button>
-      </div>  -->
-
-      <div id="tempResults">
-      </div>
-
-      <footer>
-      </footer>
-   </setion>
-   <section role="region" id="sectionList">
-      <nav>
-        <ul id="ulList" class="compact">
-
-        </ul>
-      </nav>
+  <section role="region" id="sectionList">
+     <header>
+      <button>
+        <span class="icon icon-back">Back</span>
+      </button>
+      <menu type="toolbar">
+       <span class="icon icon-menu">Menu</span>
+      </menu>
+      <h1>Wappa!! <em>Results</em></h1>
+     </header>
+     <nav>
+       <ul id="ulList" class="compact">
+       </ul>
+     </nav>
+     <footer>
+      <span>#sectionList Footer</span>
+     </footer>
    </section>
 
-  
+
+  <div id="tempResults">
+  </div>
+
+
+
+  <!-- Just for development porpouses!! -->
   <div id="develResults" style="display:none;">
   <table id="searchResult">
   <thead id="tableHead">
@@ -171,9 +194,9 @@
 </div><!-- // div:develResults -->
 
    <!-- <script type="text/javascript" src="js/quo/quo.js"></script> -->
-   <script type="text/javascript" src="js/quo/quo.debug.js"></script>
+   <script type="text/javascript" src="js/quo/quo.debug.js"></script> 
    <script type="text/javascript" src="js/wappa.js"></script>
    <script type="text/javascript" src="js/wappa.utils.js"></script>
-   <script type="text/javascript" src="js/wappa.tpb.js"></script>
+   <script type="text/javascript" src="js/wappa.tpb.js"></script> -->
 </body>
 </html>

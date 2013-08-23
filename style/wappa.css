@@ -1,4 +1,7 @@
-/*#buttonSearch {
-  width: 100px;
-  height: 100px;
-}*/
+#sectionList {
+	display: none;
+}
+
+#configMain {
+	display: none;
+}

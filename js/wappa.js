@@ -6,11 +6,12 @@ var Wappa = (function($$, undefined) {
 
 	function _init() {
 		console.log("Wappa::init()!");
-		$$('#buttonSearch').on( 'click',  function(e) {
+
+		$$("#buttonSearch").on( "click",  function(e) {
 			e.preventDefault();
 			console.log("Wappa::click()!");
 			Wappa.Tpb.search({
-				data: $$('#inputSearch').val(),
+				data: $$("#inputSearch").val(),
 				success: _showList,
 				error: function(){ 
 					console.error("Have errors!"); 
@@ -18,10 +19,28 @@ var Wappa = (function($$, undefined) {
 				dataType: 'html'
 			});
 		});
+
+		$$(".icon-menu").on("click", function(e) {
+			$$("#configMain").show();
+		});
+
+		$$("#sectionList button").on("click", function(e) {
+			$$("#sectionList").hide();			
+			$$("#torrentSearch").show();
+		});
+
+		$$("#configMain button").on("click", function(e) {
+			$$("#configMain").hide();			
+		});
+
 	};
 
 	function _showList(list) {
-		var panel = document.getElementById('sectionList');
+		$$("[role='region']").hide();
+		$$("#sectionList").show();
+		//$$("#torrentSearch").hide();
+
+		/*var panel = document.getElementById('sectionList');
 		if( panel.children.length == 0 ) {
 			for (var i = 0; i < panel.childNodes.length; i++) {
 				if (panel.childNodes[i].nodeType == document.COMMENT_NODE) {
@@ -29,7 +48,7 @@ var Wappa = (function($$, undefined) {
 	        		break;
 	      		}
 	    	}
-    	}
+    	}*/
 
 		$$(list).each(function(index,obj) {
 			console.log(obj.title);

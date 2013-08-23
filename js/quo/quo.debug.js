@@ -958,7 +958,8 @@
         i = 0;
         symbol = GESTURE.angle_difference < 0 ? "-" : "+";
         while (Math.abs(diff - GESTURE.angle_difference) > 90 && i++ < 10) {
-          eval("diff " + symbol + "= 180;");
+          //eval("diff " + symbol + "= 180;");
+          diff += 180 * symbol;
         }
         GESTURE.angle_difference = parseInt(diff, 10);
         return _trigger("rotating", {
