@@ -54,6 +54,12 @@ var Wappa = (function($$, undefined) {
 			console.log(obj.title);
 			$$('#ulList').append( Wappa.utils.createTorrentElement(obj) );	
 		});
+
+		$$("[data-link]").on("hold", function(e) {
+				console.log("Holding: " + this.getAttribute("data-link"));
+		});
+
+
 	};
 
 	return{

@@ -9,7 +9,7 @@ Wappa.utils = (function(){
 			return;
 
 		console.log( obj.title );
-		return $$('<li>').append( $$('<span>').attr('data-link', obj.magnet).text(obj.title) );
+		return $$("<li>").append( $$("<span>").attr("data-link", obj.magnet).text(obj.title) );
 	};
 
 	return {

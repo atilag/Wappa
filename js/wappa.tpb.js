@@ -54,7 +54,11 @@ Wappa.Tpb = (function( wappa, $$, undefined){
 
 		});
 
-		_options.success(list);
+		if( list.length > 0 ) {
+			_options.success(list);
+		}else{
+			_options.error("No results");
+		}
 	};
 
 
