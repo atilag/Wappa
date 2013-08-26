@@ -12,6 +12,13 @@ Wappa.utils = (function(){
 		return $$("<li>").append( $$("<span>").attr("data-link", obj.magnet).text(obj.title) );
 	};
 
+	function _createShareElement(element) {
+		if( element == undefined )
+			return;
+
+		return $$("<li>").append( $$("<img>").attr("src", "style/images/default-share.png") );
+	}
+
 	return {
 		isNumeric : _isNumeric,
 		createTorrentElement : _createTorrentElement

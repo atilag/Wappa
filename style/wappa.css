@@ -5,3 +5,42 @@
 #configMain {
 	display: none;
 }
+
+#shares {
+	display: none;
+	position: absolute;
+	z-index: 10;
+}
+
+#shares img {
+	animation-duration: 2s;
+	animation-name: slideOut;
+	opacity: 0.5;
+}
+
+@keyframes slideOut {
+	0% {
+		transform: translateY(-100%);
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateY(-8%);
+		transform: translateX(-8%);
+
+	}
+	80% {
+		transform: translateY(-4%);
+		transform: translateX(-4%);
+
+	}
+	95% {
+		transform: translateY(2%);
+		transform: translateX(2%);
+
+	}
+	100% {
+		transform: translateY(0%);
+		transform: translateX(0%);
+	}
+}
+

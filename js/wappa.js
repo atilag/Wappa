@@ -33,7 +33,7 @@ var Wappa = (function($$, undefined) {
 			$$("#configMain").hide();			
 		});
 
-	};
+	}
 
 	function _showList(list) {
 		$$("[role='region']").hide();
@@ -57,10 +57,23 @@ var Wappa = (function($$, undefined) {
 
 		$$("[data-link]").on("hold", function(e) {
 				console.log("Holding: " + this.getAttribute("data-link"));
+				_showShares();
+
 		});
 
+	}
 
-	};
+	function _showShares() {
+		//Iterate over shares list
+		$$("#shares").show();
+		Wappa.config.getShares().forEach(function(element) {
+			$$("#shares ul").append( Wappa.utils.createShareElement(element) );
+		});
+
+	}
+
+
+
 
 	return{
 		init: _init
