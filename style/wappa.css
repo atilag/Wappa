@@ -20,27 +20,21 @@
 
 @keyframes slideOut {
 	0% {
-		transform: translateY(-100%);
-		transform: translateX(-100%);
+		transform: translateY(0%) translateX(0%);
 	}
 	50% {
-		transform: translateY(-8%);
-		transform: translateX(-8%);
-
+		transform: translateY(-92%) translateX(-92%);
+		
 	}
 	80% {
-		transform: translateY(-4%);
-		transform: translateX(-4%);
+		transform: translateY(-96%) translateX(-96%);
 
 	}
 	95% {
-		transform: translateY(2%);
-		transform: translateX(2%);
-
+		transform: translateY(-102%)  translateX(-102%);
 	}
 	100% {
-		transform: translateY(0%);
-		transform: translateX(0%);
+		transform: translateY(-100%) translateX(-100%);
 	}
 }
 

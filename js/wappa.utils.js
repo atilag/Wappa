@@ -1,8 +1,8 @@
-Wappa.utils = (function(){
+Wappa.Utils = (function(){
 	
 	function _isNumeric(obj){
 		return !isNaN( parseFloat(obj) ) && isFinite( obj );
-	};
+	}
 
 	function _createTorrentElement(obj) {
 		if( obj == undefined || obj.title == undefined || obj.magnet == undefined )
@@ -10,7 +10,7 @@ Wappa.utils = (function(){
 
 		console.log( obj.title );
 		return $$("<li>").append( $$("<span>").attr("data-link", obj.magnet).text(obj.title) );
-	};
+	}
 
 	function _createShareElement(element) {
 		if( element == undefined )
@@ -21,6 +21,7 @@ Wappa.utils = (function(){
 
 	return {
 		isNumeric : _isNumeric,
-		createTorrentElement : _createTorrentElement
+		createTorrentElement : _createTorrentElement,
+		createShareElement : _createShareElement
 	};
 })();

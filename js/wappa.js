@@ -33,6 +33,15 @@ var Wappa = (function($$, undefined) {
 			$$("#configMain").hide();			
 		});
 
+		/*$$("#shares").on("touchend", function(e){
+			$$(this).hide();			
+		});*/
+
+		/* Create dynamic DOM elements */
+		Wappa.Config.getShares().forEach(function(element) {
+			$$("#shares ul").append( Wappa.Utils.createShareElement(element) );
+		});
+
 	}
 
 	function _showList(list) {
@@ -52,23 +61,21 @@ var Wappa = (function($$, undefined) {
 
 		$$(list).each(function(index,obj) {
 			console.log(obj.title);
-			$$('#ulList').append( Wappa.utils.createTorrentElement(obj) );	
+			$$("#ulList").append( Wappa.Utils.createTorrentElement(obj) );	
 		});
 
 		$$("[data-link]").on("hold", function(e) {
 				console.log("Holding: " + this.getAttribute("data-link"));
-				_showShares();
+				_showShares(e);
 
 		});
 
 	}
 
-	function _showShares() {
-		//Iterate over shares list
+	function _showShares(event) {
+		console.log("pageX = " + event.originalEvent.pageX + " pageY = " + event.originalEvent.pageY);
+		$$("#shares").style("top", event.originalEvent.pageY + "px").style("left", event.originalEvent.pageX + "px");
 		$$("#shares").show();
-		Wappa.config.getShares().forEach(function(element) {
-			$$("#shares ul").append( Wappa.utils.createShareElement(element) );
-		});
 
 	}
 
