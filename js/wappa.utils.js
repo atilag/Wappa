@@ -19,8 +19,15 @@ Wappa.Utils = (function(){
 		return $$("<li>").append( $$("<img>").attr("src", "style/images/default-share.png") );
 	}
 
+	function _printObject(obj) {
+		for(var prop in obj) {
+			console.log(prop + ": " + obj[prop]);
+		}
+	}
+
 	return {
 		isNumeric : _isNumeric,
+		printObject : _printObject,
 		createTorrentElement : _createTorrentElement,
 		createShareElement : _createShareElement
 	};

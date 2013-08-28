@@ -73,10 +73,18 @@ var Wappa = (function($$, undefined) {
 	}
 
 	function _showShares(event) {
-		console.log("pageX = " + event.originalEvent.pageX + " pageY = " + event.originalEvent.pageY);
-		$$("#shares").style("top", event.originalEvent.pageY + "px").style("left", event.originalEvent.pageX + "px");
-		$$("#shares").show();
+		var x = event.originalEvent.touches[0].pageX;
+		var y = event.originalEvent.touches[0].pageY;
+		var height = parseInt( $$("#shares").css("height") ) / 2;
+		var width = parseInt( $$("#shares").css("width") ) / 2;
+		//console.log("pageX = " + x + " pageY = " + y);
+		$$("#shares").style("top", (y - height) + "px").style("left", (x - width) + "px");
+		$$("#shares img").style("animation-play-state", "running");
+		$$("#shares img").on('animationend', function() {
+			$$("#shares img").style("animation-play-state", "paused");
+		});
 
+		$$("#shares").show();
 	}
 
 
